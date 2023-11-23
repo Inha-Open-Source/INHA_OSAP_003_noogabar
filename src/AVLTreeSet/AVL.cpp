@@ -1,4 +1,4 @@
-#include "AVL.h"
+#include "../../header/AVLTreeSet/AVL.h"
 #include <algorithm>
 using namespace std;
 
@@ -54,13 +54,13 @@ Node *AVLTree::LR(Node *parent) {
 Node *AVLTree::Balancing(Node *node) {
   int height_difference = HeightDiff(node);
 
-  if (height_difference > 1) {      // LL or LR
+  if (height_difference > 1) {       // LL or LR
     if (HeightDiff(node->left_) > 0) // LL
       return LL(node);
     else
       return LR(node);
   } else if (height_difference < -1) { // RR or LR
-    if (HeightDiff(node->right_) > 0)   // RL
+    if (HeightDiff(node->right_) > 0)  // RL
       return RL(node);
     else
       return RR(node);

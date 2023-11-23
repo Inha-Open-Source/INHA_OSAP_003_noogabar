@@ -1,7 +1,7 @@
 #ifndef SET_H
 #define SET_H
 
-#include "AVL.h"
+#include "../AVLTreeSet/AVL.h"
 #include <utility>
 
 class Set {
