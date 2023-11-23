@@ -6,8 +6,9 @@ int Set::Size() { return size_; }
 int Set::Rank(int arg) {
   Node *node = Search(arg);
   // tree에 노드가 없다면 0 return
-  if (node == nullptr)
+  if (node == nullptr) {
     return {0, 0};
+  }
   int rank = CalculateRank(root_, arg) + 1;
   return rank;
 }
