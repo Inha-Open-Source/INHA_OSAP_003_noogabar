@@ -72,7 +72,7 @@ template <typename T> void AVLTreeSet<T>::InsertN(Node<T> *parN, T arg) {
       return;
     } else {
       InsertN(parN->get_left(), arg);
-      parN->set_left((parN->get_left()));
+      parN->set_left(Balancing(parN->get_left()));
     }
   } else {
     if (parN->get_right() == nullptr) {
@@ -81,7 +81,7 @@ template <typename T> void AVLTreeSet<T>::InsertN(Node<T> *parN, T arg) {
       return;
     } else {
       InsertN(parN->get_right(), arg);
-      parN->set_right((parN->get_right()));
+      parN->set_right(Balancing(parN->get_right()));
     }
   }
   return;
